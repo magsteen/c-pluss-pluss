@@ -26,7 +26,7 @@ void read_temperatures(double temperatures[], int length)
 	std::string filename;
 	std::ifstream file;
 
-	std::cout << "Define path to file with temperatures: ";
+	std::cout << "Temperaturdata filplassering: ";
 	getline(std::cin, filename);
 
 	file.open(filename);
