@@ -1,22 +1,22 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
 	int number = 0;
 	int *ptr = &number;
 	int &ref = number;
-	cout << "Starting value: " << number << endl;
+	std::cout << "Starting value: " << number << std::endl;
 
 	// First
 	number = 1;
-	cout << number << endl;
+	std::cout << number << std::endl;
 
 	// Second
 	*ptr = 2;
-	cout << number << endl;
+	std::cout << number << std::endl;
 
 	// Third
 	ref = 3;
-	cout << number << endl;
+	std::cout << number << std::endl;
+
+	return 0;
 }

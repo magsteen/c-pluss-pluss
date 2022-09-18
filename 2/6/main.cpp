@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int find_sum(const int *table, int length);
 
 int main() {
@@ -12,13 +10,15 @@ int main() {
 	int len_sum_three = 5;
 
 	for (int i = 0; i < length; i++) {
-		table[i] = i;
+		table[i] = i+1;
 	}
 
-	cout 
-	<< find_sum(table, len_sum_one) << endl
-	<< find_sum(table + len_sum_one, len_sum_two) << endl 
-	<< find_sum(table + len_sum_one + len_sum_two, len_sum_three) << endl;
+	std::cout 
+	<< find_sum(table, len_sum_one) << std::endl
+	<< find_sum(table + len_sum_one, len_sum_two) << std::endl 
+	<< find_sum(table + len_sum_one + len_sum_two, len_sum_three) << std::endl;
+
+	return 0;
 }
 
 int find_sum(const int *table, int length) {
