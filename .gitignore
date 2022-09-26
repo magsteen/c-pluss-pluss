@@ -36,6 +36,7 @@ build
 
 # Packing
 *tar.gz
+test
 
 # IDE
 .vscode
