@@ -127,13 +127,13 @@ public:
 	}
 
 	void draw() {
-		std::cout << " A B C D E F G H" << std::endl;
+		std::cout << "  A  B  C  D  E  F  G  H " << std::endl;
 		for (int i = 0; i < 8; i++) {
 			std::cout << i+1;
 			for (int j = 0; j < 8; j++) {
-				if (squares[i][j]) std::cout << squares[i][j]->symbol();
-				else if (i % 2 == j % 2) std::cout << "🮘";
-				else std::cout << "🮐";
+				if (squares[j][i]) std::cout << " " + squares[j][i]->symbol() + " ";
+				else if (i % 2 == j % 2) std::cout << "░░░";
+				else std::cout << "▒▒▒";
 			}
 			std::cout << std::endl;
 		}
@@ -173,7 +173,10 @@ int main() {
 	std::cout << "Initial board state: " << std::endl; 
 	board.draw();
 	for (auto &move : success_game) {
-		if (board.move_piece(get<0>(move), get<1>(move))) board.draw();
+		if (board.move_piece(get<0>(move), get<1>(move))) {
+			board.draw();
+			std::cout << std::endl;
+		}
 	}
 	std::cout << "Game is finished." << std::endl;
 
